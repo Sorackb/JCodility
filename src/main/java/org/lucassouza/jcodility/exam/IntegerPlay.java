@@ -12,6 +12,15 @@ public class IntegerPlay {
     int result = this.arrayToInt(a);
 
     result = 17 * result;
+    result = this.sumDigits(result);
+
+    return result;
+  }
+
+  public int resolve2(int[] a) {
+    int result = this.arrayToInt2(a);
+
+    result = 17 * result;
     result = this.sumDigits2(result);
 
     return result;
@@ -29,6 +38,18 @@ public class IntegerPlay {
     return result;
   }
 
+  public int sumDigits(int number) {
+    int result = 0;
+
+    while (number != 0) {
+      int digit = number % 10;
+      number = number / 10;
+      result = result + digit;
+    }
+
+    return result;
+  }
+
   private int arrayToInt2(int[] numbers) {
     StringBuilder builder = new StringBuilder();
     int result;
@@ -38,18 +59,6 @@ public class IntegerPlay {
     }
 
     result = Integer.parseInt(builder.reverse().toString());
-
-    return result;
-  }
-
-  public int sumDigits(int number) {
-    int result = 0;
-
-    while (number != 0) {
-      int digit = number % 10;
-      number = number / 10;
-      result = result + digit;
-    }
 
     return result;
   }
